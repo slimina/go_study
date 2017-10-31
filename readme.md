@@ -46,8 +46,13 @@
 
 ![main函数引入包初始化流程图](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/images/2.3.init.png?raw=true)
 
-5.test4 
+5.test4 struct类型
 
+6.test5 struct的匿名字段,继承
+
+7.test6 面向对象 method
+
+8.test7 面向对象 method指针作为receiver，继承，重写
 
 
 
