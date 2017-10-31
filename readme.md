@@ -44,7 +44,7 @@
 
 4.test3 main函数和init函数
 
-	[main函数引入包初始化流程图](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/images/2.3.init.png?raw=true)
+![main函数引入包初始化流程图](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/images/2.3.init.png?raw=true)
 
 5.test4 
 
