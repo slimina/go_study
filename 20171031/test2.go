@@ -19,7 +19,7 @@ Recover是一个内建的函数，可以让进入令人恐慌的流程中的goro
 调用recover可以捕获到panic的输入值，并且恢复正常的执行。
 */
 
-func getSystemProperty(key string) {
+func GetSystemProperty(key string) {
 	var val = os.Getenv(key) //获取环境变量
 	if val == "" {
 		panic("环境变量不存在")
@@ -39,5 +39,5 @@ func throwsPanic(f func(string), key string) (b bool) {
 }
 
 func main() {
-	fmt.Println(throwsPanic(getSystemProperty, "user"))
+	fmt.Println(throwsPanic(GetSystemProperty, "user"))
 }
