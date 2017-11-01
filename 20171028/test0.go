@@ -2,6 +2,12 @@ package main
 
 //. "fmt" 省略引用
 //out "fmt" 别名引用
+//相对路径:
+//import “./model” //当前文件同一目录的model目录，但是不建议这种方式来import
+//绝对路径:
+//import “shorturl/model” //加载gopath/src/shorturl/model模块
+//_操作 :   _ "github.com/ziutek/mymysql/godrv" : _操作其实是引入该包，而不直接使用包里面的函数，而是调用了该包里面的init函数。
+
 import (
 	"fmt"
 )

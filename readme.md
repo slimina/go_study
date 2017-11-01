@@ -54,6 +54,12 @@
 
 8.test7 面向对象 method指针作为receiver，继承，重写
 
+### 20171101
+1.test0 interface
+2.test1 接口类型转换,空接口
+3.test2 interface函数参数
+4.test3 interface变量存储的类型,Comma-ok断言
+
 
 
 # 学习文章
