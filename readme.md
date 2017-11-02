@@ -62,6 +62,8 @@
 5.test4 嵌入interface 类似匿名struct 继承
 6.test5 反射
 
+### 20171102
+1.test0 反射
 
 # 学习文章
 
