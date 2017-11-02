@@ -56,14 +56,32 @@
 
 ### 20171101
 1.test0 interface
+
 2.test1 接口类型转换,空接口
+
 3.test2 interface函数参数
+
 4.test3 interface变量存储的类型,Comma-ok断言
+
 5.test4 嵌入interface 类似匿名struct 继承
+
 6.test5 反射
 
 ### 20171102
-1.test0 反射
+1.test0 并发goroutine
+
+2.test1 channels 通信机制
+
+3.test2 Buffered Channels
+
+4.test3 Range和Close
+
+5.test4 Select读写多个channel
+
+6.test5 goroutine阻塞,超时
+
+7.test6 runtime 处理goroutine的函数
+
 
 # 学习文章
 
