@@ -36,5 +36,6 @@ func f2(n int) (int, error) {
 func main() {
 	n, e := f1(0)
 	fmt.Println(n, e)
-	//http://www.yiibai.com/go/golang-errors.html#article-start
+	a, b := f2(0)
+	fmt.Println(a, b)
 }

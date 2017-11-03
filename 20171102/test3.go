@@ -26,8 +26,22 @@ func main() {
 	//测试channel是否被关闭
 	v, ok := <-c
 	fmt.Println(v, ok) //false 关闭
+
+	//通道即便关闭，但仍然接收剩余值
+	queue := make(chan int, 2)
+	queue <- 1
+	queue <- 2
+	close(queue)
+
+	for el := range queue {
+		fmt.Println(el)
+	}
 }
 
 //记住应该在生产者的地方关闭channel，而不是消费的地方去关闭它，这样容易引起panic
 //记住一点的就是channel不像文件之类的，不需要经常去关闭，只有当你确实没有任何发送数据了，
 //或者你想显式的结束range循环之类的
+
+//  for rangge的方式可以取出channal中的数据，它取数据的方式是阻塞取数据，这和通常的方式是一致的，
+//当channal中的数据为空时，它会阻塞等待数据。如果在已经close掉channal的情况下
+//for range只会读完channal中的有效数据，然后接着往下执行，而不是向上面情况一样不断的读出0。
