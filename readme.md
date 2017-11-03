@@ -82,6 +82,10 @@
 
 7.test6 runtime 处理goroutine的函数
 
+### 20171103
+1.test0 递归
+2.test1 error
+
 
 # 学习文章
 

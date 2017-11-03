@@ -17,6 +17,7 @@ func funcName(input1 type1, input2 type2) (output1 type1, output2 type2) {
 5.如果只有一个返回值且不声明返回值变量，那么你可以省略 包括返回值 的括号
 6.如果没有返回值，那么就直接省略最后的返回信息
 7.如果有返回值， 那么必须在函数的外层添加return语句
+8.Go语言支持匿名函数，可以形成闭包。匿名函数在想要定义函数而不必命名时非常有用。
 */
 
 func print(a int) {
@@ -51,5 +52,9 @@ func main() {
 	print(m)
 
 	moreParams(1, 2, 3)
+	//匿名函数
+	func() {
+		fmt.Println(12346)
+	}()
 
 }

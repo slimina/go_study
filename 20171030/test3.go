@@ -7,6 +7,7 @@ import (
 // --- 动态数组
 //slice并不是真正意义上的动态数组，而是一个引用类型。
 //slice总是指向一个底层array，slice的声明也可以像array一样，只是不需要长度。
+//slice 的零值是 nil 。一个 nil 的 slice 的长度和容量是 0。
 
 var (
 	slice = []int{1, 2, 3, 3, 4}

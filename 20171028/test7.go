@@ -63,7 +63,7 @@ func main() {
 		fmt.Println("....")
 	}
 
-	switch {
+	switch { //没有条件的 switch,同 switch true 一样
 	case n >= 0:
 		fmt.Println("n=0")
 		fallthrough //继续执行下一个case
