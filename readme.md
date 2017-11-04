@@ -1,5 +1,7 @@
 # go语言学习
+
 ![](https://raw.githubusercontent.com/slimina/go_study/master/key.png)
+
 ### 20171028
 1.test0 helloworld
 
@@ -84,15 +86,74 @@
 
 ### 20171103
 1.test0 递归
+
 2.test1 error
+
 3.test2 select实现超时
+
 4.test3 非阻塞多路选择(select)
+
 5.test4 计时器
+
 6.test5 断续器
+
 7.test6 工作池
+
 8.test7 速率限制
+
+### 20171104
+1.test0 原子计数器
+
+2.test1 互斥体 lock
+
+3.test2 排序
+
+4.test3 字符串函数
+
+5.test4 正则表达式
+
+6.test5 JSON
+
+7.test6 时间日期
+
+8.test7 随机数
+
+9.test8 字符串转数字
+
+10.test9  URL解析
+
+11.test10 SHA1哈希,md5
+
+12.test11 base64
+
+### 20171105
+1.test0 读取文件
+
+2.test1 写文件
+
+3.test2 文件行过滤器
+
+4.test3 命令行参数
+
+5.test4 命令行标志
+
+6.test5 环境变量
+
+7.test6 执行脚本
+
+8.test7 Unix信号
+
+9.test8 退出程序
+
+10.test9 gbk转utf8
+
+11.test10 golang pprof记录
 
 
 # 学习文章
 
-1.[nil的理解](https://my.oschina.net/u/553243/blog/1558062)
+1.[build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/preface.md)
+
+2.[Go语言教程](http://www.yiibai.com/go/)
+
+3.[nil的理解](https://my.oschina.net/u/553243/blog/1558062)
