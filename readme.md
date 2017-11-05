@@ -149,6 +149,35 @@
 
 11.test10 golang pprof记录
 
+### 20171106
+1.test0 web服务器
+
+2.test1 自定义路由器
+
+3.test2 表单输入
+
+4.test3 html转义
+
+5.test4 文件上传
+
+6.test5 客户端上传文件
+
+### 20171107
+1.test0 mysql
+
+2.test1 sqlite3
+
+3.test2 PostgreSQL
+
+4.test3 redis:redigo 
+
+5.test4 redis:goredis
+
+6.test5 mongodb
+
+7.test6 Beego orm库
+
+
 
 # 学习文章
 

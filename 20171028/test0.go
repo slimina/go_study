@@ -74,3 +74,5 @@ func main() {
 	fmt.Printf("你好，%s", s1)
 	fmt.Println()
 }
+
+//fmt.Printf 格式化说明：http://www.jianshu.com/p/8be8d36e779c
