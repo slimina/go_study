@@ -14,7 +14,8 @@ https://github.com/jbarham/gopgsqldriver 支持database/sql驱动，纯Go写的
 https://github.com/lxn/go-pgsql 支持database/sql驱动，纯Go写的
 */
 func main() {
-	db, err := sql.Open("postgres", "user=postgres password=postgres dbname=test sslmode=disable")
+	db, err := sql.Open("postgres", "user=postgres password=postgres dbname=test host=10.129.56.242 port=5432 sslmode=disable")
+
 	checkErr(err)
 
 	//插入数据,PostgreSQL是通过$1,$2这种方式来指定要传递的参数
@@ -57,7 +58,7 @@ func main() {
 		var created string
 		err = rows.Scan(&uid, &username, &department, &created)
 		checkErr(err)
-		fmt.Println(uid, username, department，created)
+		fmt.Println(uid, username, department, created)
 	}
 
 	//删除数据
