@@ -189,9 +189,15 @@
 
 3.test2 simplejson
 
-4.test3 正则表达式
+4.test3 正则表达式 Match
 
+5.test4 正则表达式 Compile find
 
+6.test5 正则表达式  Replace 替换函数
+
+7.test6 正则表达式 Expand
+
+### 20171110
 
 
 # 学习文章
