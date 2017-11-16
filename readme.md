@@ -198,6 +198,11 @@
 7.test6 正则表达式 Expand
 
 ### 20171110
+1.test0 字符串处理 strings
+
+2.test1 字符串处理 strconv
+
+3.test2 文件处理  os
 
 
 # 学习文章
@@ -208,3 +213,8 @@
 
 3.[nil的理解](https://my.oschina.net/u/553243/blog/1558062)
 
+4.[golang中国社区](https://www.golangtc.com/)
+
+5.[Golang包学习](http://www.cnblogs.com/golove/tag/Golang%E5%8C%85/)
+
+6.[Go语言圣经](https://github.com/gopl-zh/gopl-zh.github.com)
