@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>wesocket test</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var socket = null;
+		var wsurl ="ws://127.0.0.1:12345";
+		window.onload= function(){
+			console.log("onload");
+			socket = new WebSocket(wsurl);
+			//onopen 建立连接后触发
+		   socket.onopen=function(){
+		   		console.log("connected to " + wsurl);
+		   }
+
+		   //onerror 发生错误时触发
+		   //onclose 关闭连接时触发
+		   socket.onclose=function (e) {
+		   		console.log("connection closed (" + e.code + ")");
+		   }
+		   //onmessage 收到消息后触发
+		   socket.onmessage = function(e) {
+				console.log("message received: " + e.data);
+			}
+		};
+		function send() {
+			var msg = document.getElementById('message').value;
+			socket.send(msg);
+		};
+	</script>
+<h1>WebSocket Echo Test</h1>
+	<form>
+		<p>
+			Message: <input id="message" type="text" value="Hello, world!">
+		</p>
+	</form>
+	<button onclick="send();">Send Message</button>
+</body>
+</html>

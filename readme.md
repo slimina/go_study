@@ -218,7 +218,39 @@
 
 ### 20171111
 1.test0 tcp客户端
+
 2.test1 tcp服务端
+
+3.test2 websocket
+
+4.test3 restful
+
+5.test4 HTTP RPC
+
+6.test5 TCP RPC
+
+7.test6 JSON RPC
+
+### 20171112
+1.test0  摘要
+
+2.test1 加密解密
+
+3.test2 Error类型
+
+4.test3 自定义Error
+
+5.test4 Error统一处理
+
+6.test5 使用GDB调试
+
+7.test6 测试用例、压力测试
+
+### 20171113
+1.test0 应用日志logrus
+2.test1 应用日志logrus email
+3.test2 应用日志seelog
+4.应用部署.md
 
 # 学习文章
 
