@@ -80,4 +80,7 @@ go install github.com/nsf/gocode
         },  
 ```
 
+#### 2.多版本管理
+如果需要go多版本环境，需要使用mercurial（Mercurial 是一种轻量级分布式版本控制系统，采用 Python 语言实现），和ruby rvm类似
+
 
