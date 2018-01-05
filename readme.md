@@ -271,3 +271,9 @@
 5.[Golang包学习](http://www.cnblogs.com/golove/tag/Golang%E5%8C%85/)
 
 6.[Go语言圣经](https://github.com/gopl-zh/gopl-zh.github.com)
+
+7.[Go 编程基础](https://github.com/Unknwon/go-fundamental-programming)
+
+8.[Go学习笔记](https://github.com/qyuhen/book)
+
+9.[Go入门指南](https://github.com/Unknwon/the-way-to-go_ZH_CN)

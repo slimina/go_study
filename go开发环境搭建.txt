@@ -1,0 +1,83 @@
+### 安装go
+1.下载并安装go程序：https://studygolang.com/dl
+
+2.配置环境变量
+```
+export GOROOT=/usr/local/go
+export GOBIN=$GOROOT/bin
+export PATH=$PATH:$GOBIN
+export GOPATH=$HOME/gopath (工作目录)
+```
+GOPATH允许多个目录，当有多个目录时，请注意分隔符，多个目录的时候Windows是分号，Linux系统是冒号，当有多个GOPATH时，默认会将go get的内容放在第一个目录下。
+
+3.工作空间目录结构
+```
+$GOPATH 目录约定有三个子目录：
+src 存放源代码（比如：.go .c .h .s等）
+pkg 编译后生成的文件（比如：.a）
+bin 编译后生成的可执行文件（为了方便，可以把此目录加入到 $PATH 变量中，如果有多个gopath，那么使用${GOPATH//://bin:}/bin添加所有的bin目录）
+```
+### 常用目录
+
+go get -v github.com/astaxie/beedb 下载远程包
+# -u 参数可以自动更新包，而且当goget的时候会自动获取该包依赖的其他第三方包
+
+go install github.com/astaxie/beedb 编译安装
+
+go build 编译可执行文件
+
+go run 
+
+go clean 用来移除当前源码包里面编译生成的文件
+
+go fmt 代码格式化   #gofmt -w src，可以格式化整个项目
+
+go test  -v 执行单元测试
+
+godoc  文档 godoc -http=:888
+
+
+### 开发工具
+
+#### 1.sublime text
+
+推荐Sublime Text 3（以下简称Sublime）+GoSublime+gocode组合
+
+下载：http://www.sublimetext.com/
+
+教程：http://blog.jobbole.com/88648/
+
+1.安装Package Control包管理工具
+
+打开之后安装 Package Control：Ctrl+` 打开命令行，执行如下代码：
+```
+import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
+```
+重启sublime
+
+2.安装GoSublime插件
+
+Ctrl+Shift+p打开Package Controll 输入pcip（即“Package Control: Install Package”的缩写），然后输入GoSublime，按确定就开始安装了。
+
+3.安装Go Build 同上
+
+4.安装gocode代码自动提示
+```
+cmd运行如下代码
+go get -u github.com/nsf/gocode
+go install github.com/nsf/gocode
+如果有错误提示，那么要安装git客户端（windows git 下载地址 http://msysgit.github.io/ ，同时要在path环境变量后追加git配置 ;D:\Program Files\Git\bin;D:\Program Files\Git\libexec\git-core;）
+```
+
+5.设置go非标准库智能提示
+
+最新版本的 gosublime 要求设置你的 GOPATH 变量到它的配置文件中，否则可能无法支持对非标准库包的代码输入提示，打开 Settings - Default，拷贝所有内容，然后粘贴到 Settings - User 中（这样的做法是为了保证你的修改不会被插件更新而重置，这插件更新很频繁）。
+接下来，在 env 这栏中输入你的 GOPATH 变量，重启设置生效。
+```
+"env": {  
+    "GOROOT":"C:\\go",  
+        "GOPATH": "E:\\mygo"  
+        },  
+```
+
+
