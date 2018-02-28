@@ -25,4 +25,7 @@ func main() {
 	if err1 != nil {
 		panic(err1)
 	}
+	//func Command(name string, arg ...string) *Cmd
+	//cmd := exec.Command("ls", "-a", "-l", "-h") //实际可以直接写成-alh
+	//b, err := cmd.CombinedOutput()
 }

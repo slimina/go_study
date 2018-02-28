@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+//slice常见操作 https://purewhite.io/2017/04/30/go-slice-tricks/
 func main() {
 	// 声明一个key是字符串，值为int的字典,这种方式的声明需要在使用之前使用make初始化
 	//var numbers map[string]int
