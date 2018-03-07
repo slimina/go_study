@@ -12,8 +12,10 @@ import (
 	"github.com/joho/godotenv"        //godotenv 可以帮助我们读取项目根目录中的 .env 配置文件
 	"io"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 )
 
@@ -22,6 +24,7 @@ type Block struct {
 	Index     int    //这个块在整个链中的位置
 	Timestamp string //块生成时的时间戳
 	BPM       int    //每分钟心跳数
+	Nonce     string //随机数
 	Hash      string //这个块通过 SHA256 算法生成的散列值
 	PrevHash  string //前一个块的 SHA256 散列值
 }
@@ -31,21 +34,22 @@ var Blockchain []Block
 
 //计算数据的SHA256 散列值
 func calculateHash(block Block) string {
-	record := string(block.Index) + block.Timestamp + string(block.BPM) + block.PrevHash
+	record := string(block.Index) + block.Timestamp + string(block.BPM) + block.PrevHash + block.Nonce
 	h := sha256.New()
 	h.Write([]byte(record))
-
 	hashed := h.Sum(nil)
 	return hex.EncodeToString(hashed)
 }
 
 //生成block
+//必须满足一定条件的新区块才有效 ： 对最新的区块头进行两次SHA256计算，得到的256bit哈希结果，高位48bit必须是0x00000000FFFF，才算挖矿成功。
 func generateBlock(oldBlock Block, BPM int) (Block, error) {
 	var newBlock Block
 	t := time.Now()
 	newBlock.Index = oldBlock.Index + 1
 	newBlock.Timestamp = t.String()
 	newBlock.BPM = BPM
+	newBlock.Nonce = strconv.FormatFloat(rand.Float64(), 'E', -1, 64)
 	newBlock.PrevHash = oldBlock.Hash
 	newBlock.Hash = calculateHash(newBlock)
 	return newBlock, nil
@@ -158,7 +162,7 @@ func main() {
 
 	go func() {
 		t := time.Now()
-		genesisBlock := Block{0, t.String(), 0, "", ""}
+		genesisBlock := Block{0, t.String(), 0, "", "", ""}
 		spew.Dump(genesisBlock)
 		Blockchain = append(Blockchain, genesisBlock)
 	}()
