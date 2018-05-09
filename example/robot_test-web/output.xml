@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180509 14:25:07.596" generator="Robot 3.0.4 (Python 2.7.13 on win32)">
+<suite source="C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\FLOW\续费业务流程.txt" id="s1" name="续费业务流程">
+<test id="s1-t1" name="组合续费-账号&amp;锁提交订单">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>20</arg>
+<arg>123456789</arg>
+</arguments>
+<assign>
+<var>${ordernum}</var>
+</assign>
+<msg timestamp="20180509 14:25:07.992" level="INFO">${ordernum} = 82749484715814419756</msg>
+<status status="PASS" endtime="20180509 14:25:07.992" starttime="20180509 14:25:07.992"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>5</arg>
+<arg>自动化测试</arg>
+</arguments>
+<assign>
+<var>${payName}</var>
+</assign>
+<msg timestamp="20180509 14:25:07.993" level="INFO">${payName} = 化动测自测</msg>
+<status status="PASS" endtime="20180509 14:25:07.993" starttime="20180509 14:25:07.993"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<assign>
+<var>${extra}</var>
+</assign>
+<msg timestamp="20180509 14:25:07.993" level="INFO">${extra} = 9TYzWfsRqW</msg>
+<status status="PASS" endtime="20180509 14:25:07.993" starttime="20180509 14:25:07.993"></status>
+</kw>
+<kw name="订单提交200" library="ngtrade_order">
+<doc>1 描述:</doc>
+<arguments>
+<arg>{"inputCharset":"UTF-8","gVersion":"1","signType":"MD5","appKey":"${appkey}","channelCode":"${channelCode}","payName":"${payName}","outOrderId":"${ordernum}","extra":"${extra}","orders":[{"originalPrice":1,"dealPrice":0,"txType":1,"assetNum":"H320000739","items":[{"productIdentity":"1412","productId":"1-4LKUE5","productName":"广材数据包（全国版）--丽娟测试数据","price":1,"limitAmount":1,"limitStartTime":1498147200000,"limitEndTime":1735664461000}]},{"originalPrice":1,"dealPrice":0,"txType":2,"assetNum":"H320000731","items":[{"productIdentity":"1412","productId":"1-4LKUE5","productName":"广材数据包（全国版）--maomao111","price":1,"limitAmount":1,"limitStartTime":1498147200000,"limitEndTime":1735664461000}]}]}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="postOrder200" library="apiUtil">
+<doc>1.根据入参发送post请求并返回结果</doc>
+<arguments>
+<arg>/order/prepare</arg>
+<arg>${datas}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json; charset=utf-8</arg>
+</arguments>
+<assign>
+<var>${h}</var>
+</assign>
+<msg timestamp="20180509 14:25:07.995" level="INFO">${h} = {u'Content-Type': u'application/json; charset=utf-8'}</msg>
+<status status="PASS" endtime="20180509 14:25:07.995" starttime="20180509 14:25:07.994"></status>
+</kw>
+<kw name="Create Session">
+<arguments>
+<arg>order</arg>
+<arg>${host_order}</arg>
+</arguments>
+<msg timestamp="20180509 14:25:07.999" level="FAIL">No keyword with name 'Create Session' found.</msg>
+<status status="FAIL" endtime="20180509 14:25:07.999" starttime="20180509 14:25:07.999"></status>
+</kw>
+<status status="FAIL" endtime="20180509 14:25:07.999" starttime="20180509 14:25:07.994"></status>
+</kw>
+<status status="FAIL" endtime="20180509 14:25:07.999" starttime="20180509 14:25:07.993"></status>
+</kw>
+<doc>1.执行通过表明授权和同步crm都成功</doc>
+<status status="FAIL" endtime="20180509 14:25:07.999" critical="yes" starttime="20180509 14:25:07.991">No keyword with name 'Create Session' found.</status>
+</test>
+<status status="FAIL" endtime="20180509 14:25:07.999" starttime="20180509 14:25:07.601"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="续费业务流程" pass="0">续费业务流程</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180509 14:25:07.633" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\apiUtil.txt': Importing test library 'RequestsLibrary' failed: ImportError: No module named RequestsLibrary
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+<msg timestamp="20180509 14:25:07.667" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\apiUtil.txt': Importing test library 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Apiutil.py' failed: ImportError: No module named requests
+Traceback (most recent call last):
+  File "C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Apiutil.py", line 6, in &lt;module&gt;
+    import requests
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+<msg timestamp="20180509 14:25:07.668" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\apiUtil.txt': Importing test library 'DatabaseLibrary' failed: ImportError: No module named DatabaseLibrary
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+<msg timestamp="20180509 14:25:07.942" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\apiUtil.txt': Importing test library 'Selenium2Library' failed: ImportError: No module named Selenium2Library
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+<msg timestamp="20180509 14:25:07.957" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\dbUtil.txt': Importing test library 'RequestsLibrary' failed: ImportError: No module named RequestsLibrary
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+<msg timestamp="20180509 14:25:07.962" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\dbUtil.txt': Importing test library 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Apiutil.py' failed: ImportError: No module named requests
+Traceback (most recent call last):
+  File "C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Apiutil.py", line 6, in &lt;module&gt;
+    import requests
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+<msg timestamp="20180509 14:25:07.963" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\dbUtil.txt': Importing test library 'DatabaseLibrary' failed: ImportError: No module named DatabaseLibrary
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+<msg timestamp="20180509 14:25:07.968" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\dbUtil.txt': Importing test library 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Datautil.py' failed: ImportError: No module named pymysql
+Traceback (most recent call last):
+  File "C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Datautil.py", line 11, in &lt;module&gt;
+    import pymysql
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+<msg timestamp="20180509 14:25:07.979" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\assertUtil.txt': Importing test library 'RequestsLibrary' failed: ImportError: No module named RequestsLibrary
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+<msg timestamp="20180509 14:25:07.984" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\assertUtil.txt': Importing test library 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Apiutil.py' failed: ImportError: No module named requests
+Traceback (most recent call last):
+  File "C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Apiutil.py", line 6, in &lt;module&gt;
+    import requests
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+<msg timestamp="20180509 14:25:07.985" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\assertUtil.txt': Importing test library 'DatabaseLibrary' failed: ImportError: No module named DatabaseLibrary
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+<msg timestamp="20180509 14:25:07.989" level="ERROR">Error in file 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Tools\assertUtil.txt': Importing test library 'C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Datautil.py' failed: ImportError: No module named pymysql
+Traceback (most recent call last):
+  File "C:\Users\zhutw\Desktop\trading-platform-api-test_API_TEST\API_TEST\Datautil.py", line 11, in &lt;module&gt;
+    import pymysql
+PYTHONPATH:
+  C:\Python27\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages</msg>
+</errors>
+</robot>
