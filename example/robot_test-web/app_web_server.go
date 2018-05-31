@@ -54,7 +54,8 @@ func sayHello(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	line := strs[len(strs)-6]
-	reg := regexp.MustCompile(`.*(\d+) .+ (\d+) passed, (\d+) failed`)
+	//15 tests total, 15 passed, 0 failed
+	reg := regexp.MustCompile(`(\d+) .+ (\d+) passed, (\d+) failed`)
 	arr := reg.FindStringSubmatch(line)
 	if len(arr) != 4 {
 		w.WriteHeader(http.StatusInternalServerError)
